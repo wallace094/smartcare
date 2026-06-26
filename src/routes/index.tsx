@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowRight, Quote, UserCircle } from 'lucide-react'
+import { ArrowRight, Quote } from 'lucide-react'
 
+import { Avatar, AvatarFallback } from '#/components/ui/avatar.tsx'
+import { Badge } from '#/components/ui/badge.tsx'
+import { Button } from '#/components/ui/button.tsx'
 import { Card, CardContent, CardFooter } from '#/components/ui/card.tsx'
 
 import { SERVICES, VALUES, TESTIMONIALS } from '../data/home'
@@ -19,15 +22,33 @@ const CtaButton = ({
   children: React.ReactNode
 }) => {
   return (
-    <Link
-      to={to}
-      className="inline-flex w-fit items-center gap-2 rounded-lg bg-blue-500 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-blue-600"
+    <Button
+      asChild
+      className="w-fit rounded-lg bg-blue-500 px-6 py-2.5 text-sm font-medium hover:bg-blue-600"
     >
-      {children}
-      <ArrowRight className="h-4 w-4" />
-    </Link>
+      <Link to={to}>
+        {children}
+        <ArrowRight className="h-4 w-4" />
+      </Link>
+    </Button>
   )
 }
+
+const SectionKicker = ({ children }: { children: React.ReactNode }) => (
+  <Badge
+    variant="secondary"
+    className="bg-blue-50 text-sm font-semibold uppercase tracking-widest text-primary"
+  >
+    {children}
+  </Badge>
+)
+
+const getInitials = (name: string) =>
+  name
+    .split(' ')
+    .map((word) => word[0])
+    .slice(0, 2)
+    .join('')
 
 const Home = () => {
   return (
@@ -48,7 +69,7 @@ const Home = () => {
 
 const Hero = () => {
   return (
-    <section className="relative h-dvh mb-20">
+    <section className="relative mb-20 h-dvh">
       <img
         src={heroBg}
         alt="Perawat mendampingi pasien lansia di rumah"
@@ -59,10 +80,10 @@ const Hero = () => {
       <div className="absolute bottom-1/5 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="mx-auto flex h-full max-w-7xl flex-col justify-center px-4">
           <div className="max-w-3xl text-white">
-            <h1 className="text-4xl font-bold leading-tight sm:text-5xl text-center">
+            <h1 className="text-center text-4xl font-bold leading-tight sm:text-5xl">
               Solusi Kesehatan Terlengkap
             </h1>
-            <p className="mt-4 text-base text-center leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-4 text-center text-base leading-relaxed text-white/90 sm:text-lg">
               Smart Care hadir sebagai mitra terpercaya dalam menyediakan
               layanan kesehatan yang komprehensif, profesional, dan personal.
             </p>
@@ -75,8 +96,8 @@ const Hero = () => {
 
 const CallBand = () => {
   return (
-    <section className="-mt-12 relative z-10">
-      <div className="grid items-stretch gap-10 rounded-2xl  p-4 sm:p-5 md:grid-cols-[440px_1fr]">
+    <section className="relative z-10 -mt-12">
+      <div className="grid items-stretch gap-10 rounded-2xl p-4 sm:p-5 md:grid-cols-[440px_1fr]">
         <img
           src={aboutUs1}
           alt="Dokter melakukan kunjungan ke rumah"
@@ -84,10 +105,10 @@ const CallBand = () => {
         />
 
         <div className="flex flex-col justify-center gap-10 py-2 pr-2">
-          <h2 className="text-5xl w-2/3 text-start text-slate-600 sm:text-3xl">
+          <h2 className="w-2/3 text-start text-5xl text-slate-600 sm:text-3xl">
             Panggil Dokter ke Rumah Anda, Berobat Tanpa Antri
           </h2>
-          <p className="text-4xl  text-start font-bold text-slate-700">
+          <p className="text-start text-4xl font-bold text-slate-700">
             Biaya dokter dan suster terjangkau, mulai dari Rp 300.000
           </p>
           <div className="mt-2 flex justify-center">
@@ -102,9 +123,7 @@ const CallBand = () => {
 const About = () => {
   return (
     <section className="mt-10">
-      <p className="text-5xl font-semibold uppercase tracking-widest text-primary">
-        Tentang Kami
-      </p>
+      <SectionKicker>Tentang Kami</SectionKicker>
       <div className="mt-4 grid items-center gap-10 md:grid-cols-2">
         <div className="grid h-112 grid-cols-2 grid-rows-2 gap-4">
           <img
@@ -124,8 +143,8 @@ const About = () => {
           />
         </div>
 
-        <div className="rounded-2xl bg-blue-50 p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+        <Card className="gap-0 rounded-2xl border-0 bg-blue-50 p-8 shadow-none">
+          <h2 className="mb-6 text-3xl font-bold text-gray-800">
             Mewujudkan Kesehatan Optimal untuk Semua
           </h2>
           <p className="mt-4 leading-relaxed text-gray-600">
@@ -137,7 +156,7 @@ const About = () => {
           <div className="mt-6 space-y-5">
             {VALUES.map(({ icon: Icon, title, body }) => (
               <div key={title} className="flex gap-4">
-                <span className="grid size-11 shrink-0 place-items-center rounded-full ">
+                <span className="grid size-11 shrink-0 place-items-center rounded-full">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div>
@@ -149,7 +168,7 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   )
@@ -158,9 +177,7 @@ const About = () => {
 const Services = () => {
   return (
     <section className="mt-20">
-      <p className="text-5xl font-semibold uppercase tracking-widest text-primary">
-        Layanan Kami
-      </p>
+      <SectionKicker>Layanan Kami</SectionKicker>
 
       <div className="mt-8 space-y-6">
         {SERVICES.map(({ image, title, body }, i) => {
@@ -195,9 +212,7 @@ const Services = () => {
 const Testimonials = () => {
   return (
     <section className="mt-20">
-      <p className="text-5xl font-semibold uppercase tracking-widest text-primary">
-        Testimoni
-      </p>
+      <SectionKicker>Testimoni</SectionKicker>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {TESTIMONIALS.map(({ quote, name, role }) => (
@@ -209,7 +224,11 @@ const Testimonials = () => {
               </blockquote>
             </CardContent>
             <CardFooter className="gap-2.5">
-              <UserCircle className="h-9 w-9 text-blue-500" />
+              <Avatar className="size-9">
+                <AvatarFallback className="bg-blue-100 text-xs font-semibold text-blue-600">
+                  {getInitials(name)}
+                </AvatarFallback>
+              </Avatar>
               <div className="flex flex-col">
                 <span className="text-sm font-semibold text-blue-600">
                   {name}
@@ -221,14 +240,14 @@ const Testimonials = () => {
         ))}
       </div>
 
-      <div className="mt-10 grid items-center gap-6 overflow-hidden rounded-2xl bg-blue-50 p-6 sm:p-8 md:grid-cols-[320px_1fr]">
+      <Card className="mt-10 grid grid-cols-1 items-center gap-6 rounded-2xl border-0 bg-blue-50 p-6 shadow-none sm:p-8 md:grid-cols-[320px_1fr]">
         <img
           src={testimonyImg}
           alt="Tim medis SmartCare siap melayani"
           className="h-60 w-full rounded-xl object-cover"
         />
         <div>
-          <h3 className="text-3xl w-4/5 font-bold text-slate-700 sm:text-3xl">
+          <h3 className="w-4/5 text-3xl font-bold text-slate-700 sm:text-3xl">
             Siap Memberikan Perawatan Terbaik untuk Orang Tercinta di Rumah?
           </h3>
           <p className="mt-3 leading-relaxed text-gray-600">
@@ -239,7 +258,7 @@ const Testimonials = () => {
             <CtaButton to="/contact">Kontak Kami</CtaButton>
           </div>
         </div>
-      </div>
+      </Card>
     </section>
   )
 }
