@@ -38,9 +38,9 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-[#F0F7FF]">
       <Navbar />
-      <main className="flex-1 px-4 mx-auto w-4/5">
+      <main>
         <Outlet />
       </main>
       <Footer />
