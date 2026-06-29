@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Quote } from 'lucide-react'
 
@@ -209,14 +210,46 @@ const Services = () => {
   )
 }
 
+// Pixels per second the testimonial ticker drifts.
+const SCROLL_SPEED = 100
+
 const Testimonials = () => {
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let raf = 0
+    let last = 0
+    const step = (now: number) => {
+      if (last) {
+        track.scrollLeft += (SCROLL_SPEED * (now - last)) / 1000
+        const loop = track.scrollWidth / 2
+        if (track.scrollLeft >= loop) track.scrollLeft -= loop
+      }
+      last = now
+      raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
   return (
     <section className="mt-20">
       <SectionKicker>Testimoni</SectionKicker>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {TESTIMONIALS.map(({ quote, name, role }) => (
-          <Card key={name} className="gap-4">
+      <div
+        ref={trackRef}
+        className="mt-8 flex gap-5 overflow-x-hidden pb-2 scrollbar-none [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6rem,#000_calc(100%-6rem),transparent)] mask-[linear-gradient(to_right,transparent,#000_6rem,#000_calc(100%-6rem),transparent)]"
+      >
+        {[...TESTIMONIALS, ...TESTIMONIALS].map(({ quote, name, role }, i) => (
+          <Card
+            key={`${name}-${i}`}
+            aria-hidden={i >= TESTIMONIALS.length}
+            className="w-[85%] shrink-0 gap-4 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
+          >
             <CardContent>
               <Quote className="size-5 fill-blue-500 text-blue-500" />
               <blockquote className="mt-3 text-sm leading-relaxed text-blue-600">
