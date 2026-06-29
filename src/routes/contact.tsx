@@ -43,7 +43,7 @@ const ConsultationSection = () => (
       </div>
       <Button
         asChild
-        className="h-14 w-fit rounded-xl bg-sky-500 px-8 text-xl font-normal text-blue-50 hover:bg-sky-600"
+        className="w-fit rounded-lg bg-blue-500 px-6 py-2.5 text-sm font-medium hover:bg-blue-600"
       >
         <a href="https://api.whatsapp.com/send?phone=6285800000527&text=Hello%E2%80%A6.%20I%20want%20more%20information%20about%20the%20product" target="_blank" rel="noreferrer">
           Hubungi via WhatsApp
