@@ -182,6 +182,7 @@ const Services = () => {
       <div className="mt-8 space-y-6">
         {SERVICES.map((service, i) => {
           const { image, title, body } = service
+          const body2 = 'body2' in service ? service.body2 : undefined
           const footer = 'footer' in service ? service.footer : undefined
           const flip = i % 2 === 1
           return (
@@ -199,6 +200,11 @@ const Services = () => {
               >
                 <h3 className="text-3xl font-bold text-slate-600">{title}</h3>
                 <p className="text-lg leading-relaxed text-slate-700">{body}</p>
+                {body2 && (
+                  <p className="text-lg leading-relaxed text-slate-700">
+                    {body2}
+                  </p>
+                )}
                 {footer && (
                   <p className="font-bold text-slate-700">{footer}</p>
                 )}

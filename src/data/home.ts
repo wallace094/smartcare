@@ -8,7 +8,9 @@ export const SERVICES = [
   {
     image: ourServices,
     title: 'Pendampingan dan Perawatan Sepenuh Hati',
-    body: 'Kami menyediakan berbagai layanan homecare kesehatan profesional yang dirancang khusus untuk memenuhi kebutuhan medis dan pemulihan Anda atau keluarga tercinta di rumah. Dengan dukungan tim perawat berlisensi, dokter berpengalaman, dan terapis profesional, kami menghadirkan standar perawatan rumah sakit langsung ke kamar tidur Anda. Kami berkomitmen untuk mendampingi setiap langkah pemulihan dengan penuh empati, memberikan rasa aman bagi pasien.',
+    body: 'Kami menyediakan berbagai layanan homecare kesehatan profesional yang dirancang khusus untuk memenuhi kebutuhan medis dan pemulihan Anda atau keluarga tercinta di rumah. ',
+    body2:
+      'Dengan dukungan tim perawat berlisensi, dokter berpengalaman, dan terapis profesional, kami menghadirkan standar perawatan rumah sakit langsung ke kamar tidur Anda. Kami berkomitmen untuk mendampingi setiap langkah pemulihan dengan penuh empati, memberikan rasa aman bagi pasien.',
   },
   {
     image: aboutUs2,
