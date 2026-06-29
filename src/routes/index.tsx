@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, Quote } from 'lucide-react'
 
@@ -103,14 +104,14 @@ const CallBand = () => {
           className="h-full min-h-52 w-full rounded-xl object-cover"
         />
 
-        <div className="flex flex-col justify-center gap-10 py-2 pr-2">
-          <h2 className="w-full text-start text-5xl text-slate-600">
+        <div className="flex flex-col justify-center gap-6 py-2 sm:gap-10 sm:pr-2">
+          <h2 className="text-start text-2xl text-slate-600 sm:text-3xl md:w-2/3">
             Panggil Dokter ke Rumah Anda, Berobat Tanpa Antri
           </h2>
-          <p className="text-start text-4xl font-bold text-slate-700">
+          <p className="text-start text-2xl font-bold text-slate-700 sm:text-3xl lg:text-4xl">
             Biaya dokter dan suster terjangkau, mulai dari Rp 300.000
           </p>
-          <div className="mt-2 flex justify-center">
+          <div className="mt-2 flex justify-center sm:justify-start">
             <CtaButton to="/contact">Jadwalkan Kunjungan Sekarang</CtaButton>
           </div>
         </div>
@@ -184,7 +185,7 @@ const Services = () => {
           return (
             <article
               key={title}
-              className={`grid items-stretch gap-32 overflow-hidden rounded-2xl p-5 sm:p-6 ${flip ? 'md:grid-cols-[1fr_360px]' : 'md:grid-cols-[360px_1fr]'}`}
+              className={`grid items-stretch gap-8 overflow-hidden rounded-2xl p-5 sm:p-6 md:gap-20 ${flip ? 'md:grid-cols-[1fr_360px]' : 'md:grid-cols-[360px_1fr]'}`}
             >
               <img
                 src={image}
@@ -208,14 +209,46 @@ const Services = () => {
   )
 }
 
+// Pixels per second the testimonial ticker drifts.
+const SCROLL_SPEED = 100
+
 const Testimonials = () => {
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const track = trackRef.current
+    if (!track) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let raf = 0
+    let last = 0
+    const step = (now: number) => {
+      if (last) {
+        track.scrollLeft += (SCROLL_SPEED * (now - last)) / 1000
+        const loop = track.scrollWidth / 2
+        if (track.scrollLeft >= loop) track.scrollLeft -= loop
+      }
+      last = now
+      raf = requestAnimationFrame(step)
+    }
+    raf = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(raf)
+  }, [])
+
   return (
     <section className="mt-20">
       <SectionKicker>Testimoni</SectionKicker>
 
-      <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {TESTIMONIALS.map(({ quote, name, role }) => (
-          <Card key={name} className="gap-4">
+      <div
+        ref={trackRef}
+        className="mt-8 flex gap-5 overflow-x-hidden pb-2 scrollbar-none [-webkit-mask-image:linear-gradient(to_right,transparent,#000_6rem,#000_calc(100%-6rem),transparent)] mask-[linear-gradient(to_right,transparent,#000_6rem,#000_calc(100%-6rem),transparent)]"
+      >
+        {[...TESTIMONIALS, ...TESTIMONIALS].map(({ quote, name, role }, i) => (
+          <Card
+            key={`${name}-${i}`}
+            aria-hidden={i >= TESTIMONIALS.length}
+            className="w-[85%] shrink-0 gap-4 sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]"
+          >
             <CardContent>
               <Quote className="size-5 fill-blue-500 text-blue-500" />
               <blockquote className="mt-3 text-sm leading-relaxed text-blue-600">
