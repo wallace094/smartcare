@@ -142,7 +142,7 @@ const ReviewGrid = () => (
               {review.quote}
             </blockquote>
           </CardContent>
-          <CardFooter className="justify-between gap-2.5">
+          <CardFooter className="justify-between gap-2.5 mt-auto">
             <div className="flex items-center gap-2.5">
               <Avatar className="size-9">
                 <AvatarFallback className="bg-blue-100 text-xs font-semibold text-blue-600">
@@ -166,12 +166,12 @@ const ReviewGrid = () => (
 
 const CtaBand = () => (
   <Card className="mt-16 flex flex-col items-center gap-5 rounded-2xl border-0 bg-blue-50 p-10 text-center shadow-none">
-    <h2 className="max-w-2xl text-3xl font-bold text-slate-700">
+    <h2 className="max-w-3xl text-4xl font-bold text-slate-700">
       Sudah Merasakan Layanan SmartCare?
     </h2>
-    <p className="max-w-xl leading-relaxed text-gray-600">
+    <p className="max-w-2xl text-xl leading-relaxed text-gray-600">
       Bagikan pengalaman Anda dan bantu keluarga lain menemukan perawatan
-      terbaik di rumah. Atau jadwalkan kunjungan pertama Anda sekarang.
+      terbaik di rumah. Atau jadwalkan kunjungan Anda sekarang.
     </p>
     <CtaButton to="/contact">Jadwalkan Kunjungan</CtaButton>
   </Card>
