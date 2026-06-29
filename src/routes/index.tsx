@@ -38,7 +38,7 @@ const CtaButton = ({
 const SectionKicker = ({ children }: { children: React.ReactNode }) => (
   <Badge
     variant="secondary"
-    className="bg-blue-50 text-sm font-semibold uppercase tracking-widest text-primary"
+    className="bg-blue-50 text-5xl font-semibold text-[#1A365D] leading-normal"
   >
     {children}
   </Badge>
@@ -74,17 +74,16 @@ const Hero = () => {
       <img
         src={heroBg}
         alt="Perawat mendampingi pasien lansia di rumah"
-        className="h-dvh w-full object-cover"
+        className="h-dvh w-full object-cover opacity-80"
       />
-      <div className="absolute inset-0 bg-white/15 backdrop-blur-xs backdrop-saturate-100" />
-
-      <div className="absolute bottom-1/5 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      
+      <div className="absolute bottom-1/64 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="mx-auto flex h-full max-w-7xl flex-col justify-center px-4">
-          <div className="max-w-3xl text-white">
+          <div className="mx-auto max-w-3xl text-[#1A365D]">
             <h1 className="text-center text-4xl font-bold leading-tight sm:text-5xl">
               Solusi Kesehatan Terlengkap
             </h1>
-            <p className="mt-4 text-center text-base leading-relaxed text-white/90 sm:text-lg">
+            <p className="mt-4 text-center text-base leading-relaxed  sm:text-lg">
               Smart Care hadir sebagai mitra terpercaya dalam menyediakan
               layanan kesehatan yang komprehensif, profesional, dan personal.
             </p>
@@ -98,7 +97,7 @@ const Hero = () => {
 const CallBand = () => {
   return (
     <section className="relative z-10 -mt-12">
-      <div className="grid items-stretch gap-10 rounded-2xl p-4 sm:p-5 md:grid-cols-[440px_1fr]">
+      <div className="grid items-stretch gap-32 rounded-2xl p-4 sm:p-5 md:grid-cols-[440px_1fr]">
         <img
           src={aboutUs1}
           alt="Dokter melakukan kunjungan ke rumah"
@@ -145,7 +144,7 @@ const About = () => {
         </div>
 
         <Card className="gap-0 rounded-2xl border-0 bg-blue-50 p-8 shadow-none">
-          <h2 className="mb-6 text-3xl font-bold text-gray-800">
+          <h2 className="mb-4 text-3xl font-bold text-gray-800">
             Mewujudkan Kesehatan Optimal untuk Semua
           </h2>
           <p className="mt-4 leading-relaxed text-gray-600">
@@ -154,7 +153,7 @@ const About = () => {
             Kami menggabungkan tenaga medis profesional dengan layanan yang
             penuh empati, langsung di kenyamanan rumah Anda.
           </p>
-          <div className="mt-6 space-y-5">
+          <div className="mt-6 space-y-4">
             {VALUES.map(({ icon: Icon, title, body }) => (
               <div key={title} className="flex gap-4">
                 <span className="grid size-11 shrink-0 place-items-center rounded-full">
@@ -256,7 +255,7 @@ const Testimonials = () => {
                 {quote}
               </blockquote>
             </CardContent>
-            <CardFooter className="gap-2.5">
+            <CardFooter className="gap-2.5 mt-auto">
               <Avatar className="size-9">
                 <AvatarFallback className="bg-blue-100 text-xs font-semibold text-blue-600">
                   {getInitials(name)}
@@ -273,7 +272,7 @@ const Testimonials = () => {
         ))}
       </div>
 
-      <Card className="mt-10 grid grid-cols-1 items-center gap-6 rounded-2xl border-0 bg-blue-50 p-6 shadow-none sm:p-8 md:grid-cols-[320px_1fr]">
+      <Card className="mt-10 grid grid-cols-1 items-center gap-32 rounded-2xl border-0 bg-blue-50 p-6 shadow-none sm:p-8 md:grid-cols-[320px_1fr]">
         <img
           src={testimonyImg}
           alt="Tim medis SmartCare siap melayani"
