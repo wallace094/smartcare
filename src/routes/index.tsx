@@ -180,7 +180,9 @@ const Services = () => {
       <SectionKicker>Layanan Kami</SectionKicker>
 
       <div className="mt-8 space-y-6">
-        {SERVICES.map(({ image, title, body }, i) => {
+        {SERVICES.map((service, i) => {
+          const { image, title, body } = service
+          const footer = 'footer' in service ? service.footer : undefined
           const flip = i % 2 === 1
           return (
             <article
@@ -197,6 +199,9 @@ const Services = () => {
               >
                 <h3 className="text-3xl font-bold text-slate-600">{title}</h3>
                 <p className="text-lg leading-relaxed text-slate-700">{body}</p>
+                {footer && (
+                  <p className="font-bold text-slate-700">{footer}</p>
+                )}
                 <div className="mt-2 flex justify-center">
                   <CtaButton to="/services">Selengkapnya</CtaButton>
                 </div>

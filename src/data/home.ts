@@ -8,17 +8,19 @@ export const SERVICES = [
   {
     image: ourServices,
     title: 'Pendampingan dan Perawatan Sepenuh Hati',
-    body: 'Tenaga pendamping terlatih menemani aktivitas harian, memantau kondisi, dan memberi dukungan emosional bagi lansia maupun pasien pemulihan — dengan kehangatan keluarga.',
+    body: 'Kami menyediakan berbagai layanan homecare kesehatan profesional yang dirancang khusus untuk memenuhi kebutuhan medis dan pemulihan Anda atau keluarga tercinta di rumah. Dengan dukungan tim perawat berlisensi, dokter berpengalaman, dan terapis profesional, kami menghadirkan standar perawatan rumah sakit langsung ke kamar tidur Anda. Kami berkomitmen untuk mendampingi setiap langkah pemulihan dengan penuh empati, memberikan rasa aman bagi pasien.',
   },
   {
     image: aboutUs2,
     title: 'Layanan Kunjungan Dokter ke Rumah',
-    body: 'Dokter umum dan spesialis datang langsung ke rumah Anda untuk pemeriksaan, konsultasi, dan tindakan medis ringan. Tanpa antri, tanpa repot ke klinik.',
+    body: 'Dapatkan pemeriksaan medis komprehensif, diagnosis akurat, dan peresepan obat oleh dokter berlisensi tanpa perlu repot antre di rumah sakit. Solusi paling praktis, aman, dan nyaman bagi pasien lansia, pemulihan pasca-rawat inap, atau saat kondisi fisik tidak memungkinkan untuk bepergian.',
+    footer: 'Biaya layanan mulai dari Rp 500.000/kunjungan',
   },
   {
     image: aboutUs3,
     title: 'Layanan Kunjungan Perawat ke Rumah',
-    body: 'Perawat profesional siap membantu perawatan luka, pemberian obat, infus, hingga fisioterapi sesuai jadwal yang Anda tentukan.',
+    body: 'Dapatkan tindakan keperawatan profesional tanpa harus bolak-balik ke klinik atau rumah sakit. Tim perawat medis kami yang bersertifikat siap hadir untuk membantu perawatan luka, penggantian infus, pemasangan kateter, penyuntikan obat, hingga pemantauan tanda-tanda vital dengan standar kebersihan dan keamanan medis tertinggi.',
+    footer: 'Biaya layanan mulai dari Rp 300.000/kunjungan',
   },
 ] as const
 
