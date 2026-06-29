@@ -181,8 +181,8 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
     service
 
   const textBlock = (
-    <div className="flex w-[530px] shrink-0 flex-col justify-center gap-6">
-      <h2 className="text-4xl font-bold leading-tight text-slate-800">
+    <div className="flex w-full flex-col justify-center gap-6 md:w-[530px] md:shrink-0">
+      <h2 className="text-3xl font-bold leading-tight text-slate-800 lg:text-4xl">
         {title}
       </h2>
       <ServiceDescription paragraphs={paragraphs} listTitle={listTitle} listItems={listItems} />
@@ -191,13 +191,13 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
   )
 
   const imageBlock = (
-    <div className="flex min-h-96 flex-1 overflow-hidden rounded-xl">
+    <div className="flex min-h-64 flex-1 overflow-hidden rounded-xl md:min-h-96">
       <img src={imageUrl} alt={imageAlt} className="w-full flex-1 object-cover" />
     </div>
   )
 
   return (
-    <div className="flex items-center gap-16 px-16 py-6">
+    <div className="flex flex-col gap-8 py-6 md:flex-row md:items-center md:gap-16 md:px-16">
       {imageLeft ? imageBlock : textBlock}
       {imageLeft ? textBlock : imageBlock}
     </div>
@@ -206,10 +206,10 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
 
 const PageHeader = () => (
   <div className="flex flex-col items-center gap-8 py-6">
-    <h1 className="max-w-2xl text-center text-5xl text-slate-800">
+    <h1 className="max-w-2xl text-center text-3xl text-slate-800 sm:text-4xl lg:text-5xl">
       Layanan Medis Terbaik, Langsung di Rumah Anda
     </h1>
-    <p className="max-w-4xl text-center text-2xl text-slate-700">
+    <p className="max-w-4xl text-center text-lg text-slate-700 sm:text-xl lg:text-2xl">
       Kami menghadirkan standar perawatan rumah sakit ke ruang keluarga Anda. Temukan berbagai
       layanan medis yang dirancang khusus untuk mendukung proses pemulihan keluarga tercinta.
     </p>
@@ -219,12 +219,14 @@ const PageHeader = () => (
 
 const ServicesPage = () => {
   return (
-    <div className="min-h-screen bg-sky-50 px-24">
+    <div className="min-h-screen bg-sky-50 px-4 sm:px-8 lg:px-24">
       <PageHeader />
       {SERVICES.map((service, i) => (
         <div key={service.title}>
           <ServiceCard service={service} />
-          {i < SERVICES.length - 1 && <hr className="mx-16 border-slate-200" />}
+          {i < SERVICES.length - 1 && (
+            <hr className="border-slate-200 md:mx-16" />
+          )}
         </div>
       ))}
     </div>

@@ -37,10 +37,10 @@ const SOCIAL_LINKS = [
 
 const ContactIntro = () => (
   <div className="flex flex-col items-center gap-8 py-6 text-center">
-    <h1 className="max-w-2xl text-5xl font-normal text-blue-900">
+    <h1 className="max-w-2xl text-3xl font-normal text-blue-900 sm:text-4xl lg:text-5xl">
       Kami Siap Mendampingi Pemulihan Anda
     </h1>
-    <p className="max-w-4xl text-xl leading-relaxed text-blue-900">
+    <p className="max-w-4xl text-base leading-relaxed text-blue-900 sm:text-lg lg:text-xl">
       Memiliki pertanyaan atau membutuhkan layanan medis di rumah segera? Jangan ragu untuk
       menghubungi kami. Tim ahli kami siap mendengarkan dan memberikan solusi kesehatan terbaik
       untuk Anda.
@@ -114,7 +114,9 @@ const SocialCard = ({
 const SocialSection = () => (
   <section className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 py-16 md:flex-row md:gap-16 md:px-16">
     <div className="flex flex-1 flex-col gap-6">
-      <h2 className="text-4xl font-normal text-blue-900">Tetap Terhubung dengan Kami</h2>
+      <h2 className="text-2xl font-normal text-blue-900 sm:text-3xl lg:text-4xl">
+        Tetap Terhubung dengan Kami
+      </h2>
       <p className="text-sm leading-relaxed text-blue-900">
         Dapatkan informasi medis terpercaya, tips perawatan keluarga di rumah, serta pembaruan
         layanan kami setiap harinya. Jangan ragu untuk menyapa dan berkonsultasi langsung dengan tim
@@ -123,12 +125,12 @@ const SocialSection = () => (
     </div>
 
     <div className="flex flex-1 flex-col gap-10">
-      <div className="flex gap-10">
+      <div className="flex gap-6 sm:gap-10">
         {SOCIAL_LINKS.slice(0, 2).map((link) => (
           <SocialCard key={link.name} {...link} />
         ))}
       </div>
-      <div className="flex gap-10">
+      <div className="flex gap-6 sm:gap-10">
         {SOCIAL_LINKS.slice(2).map((link) => (
           <SocialCard key={link.name} {...link} />
         ))}
@@ -144,7 +146,7 @@ const Contact = () => (
       <ConsultationSection />
     </div>
     <SocialSection />
-    <hr className="mx-16 border-t border-black/10" />
+    <hr className="mx-4 border-t border-black/10 sm:mx-16" />
   </div>
 )
 

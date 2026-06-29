@@ -105,14 +105,14 @@ const CallBand = () => {
           className="h-full min-h-52 w-full rounded-xl object-cover"
         />
 
-        <div className="flex flex-col justify-center gap-10 py-2 pr-2">
-          <h2 className="w-2/3 text-start text-5xl text-slate-600 sm:text-3xl">
+        <div className="flex flex-col justify-center gap-6 py-2 sm:gap-10 sm:pr-2">
+          <h2 className="text-start text-2xl text-slate-600 sm:text-3xl md:w-2/3">
             Panggil Dokter ke Rumah Anda, Berobat Tanpa Antri
           </h2>
-          <p className="text-start text-4xl font-bold text-slate-700">
+          <p className="text-start text-2xl font-bold text-slate-700 sm:text-3xl lg:text-4xl">
             Biaya dokter dan suster terjangkau, mulai dari Rp 300.000
           </p>
-          <div className="mt-2 flex justify-center">
+          <div className="mt-2 flex justify-center sm:justify-start">
             <CtaButton to="/contact">Jadwalkan Kunjungan Sekarang</CtaButton>
           </div>
         </div>
@@ -186,7 +186,7 @@ const Services = () => {
           return (
             <article
               key={title}
-              className={`grid items-stretch gap-20 overflow-hidden rounded-2xl p-5 sm:p-6 ${flip ? 'md:grid-cols-[1fr_360px]' : 'md:grid-cols-[360px_1fr]'}`}
+              className={`grid items-stretch gap-8 overflow-hidden rounded-2xl p-5 sm:p-6 md:gap-20 ${flip ? 'md:grid-cols-[1fr_360px]' : 'md:grid-cols-[360px_1fr]'}`}
             >
               <img
                 src={image}
