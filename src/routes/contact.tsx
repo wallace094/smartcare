@@ -10,7 +10,7 @@ import consultationImg from '../assets/images/about_us_1.jpeg'
 
 const SOCIAL_LINKS = [
   {
-    href: 'https://wa.me/',
+    href: 'https://api.whatsapp.com/send?phone=6285800000527&text=Hello%E2%80%A6.%20I%20want%20more%20information%20about%20the%20product',
     name: 'WhatsApp',
     label: 'Chat cepat langsung',
     logo: whatsappLogo,
@@ -22,7 +22,7 @@ const SOCIAL_LINKS = [
     logo: facebookLogo,
   },
   {
-    href: 'https://instagram.com/',
+    href: 'https://instagram.com/smartcaretech_/',
     name: 'Instagram',
     label: 'Lihat update terbaru',
     logo: instagramLogo,
@@ -75,7 +75,7 @@ const ConsultationSection = () => (
         asChild
         className="h-14 w-fit rounded-xl bg-sky-500 px-8 text-xl font-normal text-blue-50 hover:bg-sky-600"
       >
-        <a href="https://wa.me/" target="_blank" rel="noreferrer">
+        <a href="https://api.whatsapp.com/send?phone=6285800000527&text=Hello%E2%80%A6.%20I%20want%20more%20information%20about%20the%20product" target="_blank" rel="noreferrer">
           Hubungi via WhatsApp
           <ArrowRight className="h-8 w-8 text-[#F0F7FF]" />
         </a>
