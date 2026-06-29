@@ -53,15 +53,19 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
   )
 
   const imageBlock = (
-    <div className="w-96 overflow-hidden rounded-xl shrink-0">
-    <img src={imageUrl} alt={imageAlt} className="h-full w-full object-cover" />
-  </div>
+    <div className="w-full shrink-0 overflow-hidden rounded-xl md:w-96">
+      <img src={imageUrl} alt={imageAlt} className="h-full w-full object-cover" />
+    </div>
   )
 
   return (
-    <div className="flex flex-col gap-8 py-6 md:flex-row md:items-center md:justify-between md:px-24">
-      {imageLeft ? imageBlock : textBlock}
-      {imageLeft ? textBlock : imageBlock}
+    <div
+      className={`flex flex-col gap-8 py-6 md:items-center md:justify-between md:px-24 ${
+        imageLeft ? 'md:flex-row' : 'md:flex-row-reverse'
+      }`}
+    >
+      {imageBlock}
+      {textBlock}
     </div>
   )
 }
