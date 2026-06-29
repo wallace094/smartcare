@@ -41,11 +41,11 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-xl text-gray-800">
+          <div className="flex flex-col items-end gap-4">
+            <h3 className="text-xl w-sm text-gray-800">
               Layanan Pengaduan Konsumen
             </h3>
-            <p className="font-semibold text-gray-800">
+            <p className="font-semibold w-sm text-gray-800">
               PT SmartCare Indonesia Homecare
             </p>
             <ul className="flex flex-col gap-3 text-sm text-gray-600 max-w-sm">
