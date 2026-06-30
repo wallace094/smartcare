@@ -26,10 +26,10 @@ export function Footer() {
               <a href="#" aria-label="Facebook">
                 <img src={facebookLogo} alt="" className="h-7 w-7" />
               </a>
-              <a href="#" aria-label="Instagram">
+              <a href="https://www.instagram.com/smartcaretech_/" aria-label="Instagram">
                 <img src={instagramLogo} alt="" className="h-7 w-7" />
               </a>
-              <a href="#" aria-label="WhatsApp">
+              <a href="https://api.whatsapp.com/send?phone=6285800000527&text=Hello%E2%80%A6.%20I%20want%20more%20information%20about%20the%20product" aria-label="WhatsApp">
                 <img src={whatsappLogo} alt="" className="h-7 w-7" />
               </a>
               <a href="#" aria-label="TikTok">
