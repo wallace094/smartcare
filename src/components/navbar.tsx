@@ -17,7 +17,7 @@ export function Navbar() {
     <nav className="border-b border-blue-100 bg-white">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
-          <img src={smartcareLogo} alt="SmartCare" className="h-10 w-auto sm:h-12" />
+          <img src={smartcareLogo} alt="SmartCare" className="h-12 w-auto sm:h-16" />
         </Link>
 
         {/* Desktop links */}

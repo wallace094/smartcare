@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/next"
 import appCss from '../styles.css?url'
 import { Navbar } from '../components/navbar'
 import { Footer } from '../components/footer'
+import smartcareLogo from '../assets/logo/smartcare_logo_s.png'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -23,13 +24,18 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'SmartCare - Solusi Kesehatan Terlengkap',
       },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: smartcareLogo,
       },
     ],
   }),
