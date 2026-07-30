@@ -6,7 +6,6 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import { Analytics } from "@vercel/analytics/next"
 
 import appCss from '../styles.css?url'
 import { Navbar } from '../components/navbar'
@@ -47,7 +46,6 @@ function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F0F7FF]">
       <Navbar />
-      <Analytics />
       <main>
         <Outlet />
       </main>
