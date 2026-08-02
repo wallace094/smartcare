@@ -6,11 +6,11 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import { Analytics } from "@vercel/analytics/next"
 
 import appCss from '../styles.css?url'
 import { Navbar } from '../components/navbar'
 import { Footer } from '../components/footer'
+import smartcareLogo from '../assets/logo/smartcare_logo_s.png'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -23,13 +23,18 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'SmartCare - Solusi Kesehatan Terlengkap',
       },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: smartcareLogo,
       },
     ],
   }),
@@ -41,7 +46,6 @@ function RootComponent() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F0F7FF]">
       <Navbar />
-      <Analytics />
       <main>
         <Outlet />
       </main>

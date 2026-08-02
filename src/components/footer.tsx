@@ -16,7 +16,7 @@ export function Footer() {
             <img
               src={smartcareLogo}
               alt="SmartCare"
-              className="h-12 w-auto self-start"
+              className="h-16 w-auto self-start"
             />
             <p className="max-w-sm text-sm leading-relaxed text-gray-600">
               SmartCare hadir sebagai mitra terpercaya dalam menyediakan layanan
