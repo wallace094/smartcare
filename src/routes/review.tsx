@@ -177,4 +177,18 @@ const CtaBand = () => (
   </Card>
 )
 
-export const Route = createFileRoute('/review')({ component: Review })
+export const Route = createFileRoute('/review')({
+  head: () => ({
+    meta: [
+      {
+        title: 'SmartCare - Testimoni Pasien | Pengalaman Layanan SmartCare',
+      },
+      {
+        name: 'description',
+        content:
+          'Baca cerita nyata dari keluarga yang telah menggunakan layanan homecare SmartCare. Ribuan keluarga mempercayakan perawatan kesehatan mereka kepada kami.',
+      },
+    ],
+  }),
+  component: Review,
+})

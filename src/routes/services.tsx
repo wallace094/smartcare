@@ -99,4 +99,18 @@ const ServicesPage = () => {
   )
 }
 
-export const Route = createFileRoute('/services')({ component: ServicesPage })
+export const Route = createFileRoute('/services')({
+  head: () => ({
+    meta: [
+      {
+        title: 'SmartCare - Layanan Kami | Perawatan Medis di Rumah',
+      },
+      {
+        name: 'description',
+        content:
+          'Jelajahi layanan medis SmartCare: kunjungan dokter, perawatan suster, dan pendampingan pemulihan langsung di rumah Anda dengan standar rumah sakit.',
+      },
+    ],
+  }),
+  component: ServicesPage,
+})

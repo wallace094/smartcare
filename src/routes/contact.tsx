@@ -120,4 +120,18 @@ const Contact = () => (
   </div>
 )
 
-export const Route = createFileRoute('/contact')({ component: Contact })
+export const Route = createFileRoute('/contact')({
+  head: () => ({
+    meta: [
+      {
+        title: 'SmartCare - Hubungi Kami | Jadwalkan Kunjungan',
+      },
+      {
+        name: 'description',
+        content:
+          'Hubungi SmartCare untuk konsultasi medis dan jadwalkan kunjungan dokter atau suster ke rumah Anda. Layanan cepat via WhatsApp, siap membantu setiap hari.',
+      },
+    ],
+  }),
+  component: Contact,
+})
