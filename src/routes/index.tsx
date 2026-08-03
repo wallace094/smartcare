@@ -306,4 +306,18 @@ const Testimonials = () => {
   )
 }
 
-export const Route = createFileRoute('/')({ component: Home })
+export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      {
+        title: 'SmartCare - Layanan Dokter dan Perawat Kunjungan ke Rumah',
+      },
+      {
+        name: 'description',
+        content:
+          'SmartCare menyediakan layanan homecare profesional — dokter dan suster kunjungan ke rumah dengan biaya terjangkau mulai dari Rp 300.000. Berobat tanpa antri, langsung di rumah Anda.',
+      },
+    ],
+  }),
+  component: Home,
+})

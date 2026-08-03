@@ -15,3 +15,5 @@ todos.json
 # Vercel build output
 .vercel
 .vercel/
+
+claude.md

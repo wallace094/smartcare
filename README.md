@@ -108,7 +108,7 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: ({ children }) => (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>
