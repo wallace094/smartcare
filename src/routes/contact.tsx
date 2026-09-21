@@ -7,10 +7,10 @@ import consultationImg from '../assets/images/about_us_1.jpeg'
 
 const ContactIntro = () => (
   <div className="flex flex-col items-center gap-8 py-6 text-center">
-    <h1 className="max-w-2xl text-3xl font-normal text-blue-900 sm:text-4xl lg:text-5xl">
+    <h1 className="max-w-2xl text-h1 leading-tight text-brand-navy sm:text-h1-lg">
       Kami Siap Mendampingi Pemulihan Anda
     </h1>
-    <p className="max-w-4xl text-base leading-relaxed text-blue-900 sm:text-lg lg:text-xl">
+    <p className="max-w-4xl text-lead leading-relaxed text-brand-navy sm:text-lead-lg">
       Memiliki pertanyaan atau membutuhkan layanan medis di rumah segera? Jangan ragu untuk
       menghubungi kami. Tim ahli kami siap mendengarkan dan memberikan solusi kesehatan terbaik
       untuk Anda.
@@ -28,8 +28,8 @@ const ConsultationSection = () => (
     />
     <div className="flex max-w-sm flex-col gap-9">
       <div className="flex flex-col gap-4">
-        <h2 className="text-2xl font-normal text-blue-900">Butuh Konsultasi Medis Langsung?</h2>
-        <div className="flex flex-col gap-2.5 text-sm leading-relaxed text-blue-900">
+        <h2 className="text-h2 text-gray-800">Butuh Konsultasi Medis Langsung?</h2>
+        <div className="flex flex-col gap-2.5 text-body leading-relaxed text-gray-600">
           <p>
             Jangan tunda masalah kesehatan Anda atau keluarga. Dokter dan tim perawat profesional
             kami siap menjawab pertanyaan Anda, memberikan rekomendasi perawatan awal, dan membantu
@@ -84,10 +84,10 @@ const SocialCard = ({
 const SocialSection = () => (
   <section className="mx-auto flex max-w-5xl flex-col items-center gap-10 px-4 py-16 md:flex-row md:gap-16 md:px-16">
     <div className="flex flex-1 flex-col gap-6">
-      <h2 className="text-2xl font-normal text-blue-900 sm:text-3xl lg:text-4xl">
+      <h2 className="text-h2 text-gray-800">
         Tetap Terhubung dengan Kami
       </h2>
-      <p className="text-sm leading-relaxed text-blue-900">
+      <p className="text-body leading-relaxed text-gray-600">
         Dapatkan informasi medis terpercaya, tips perawatan keluarga di rumah, serta pembaruan
         layanan kami setiap harinya. Jangan ragu untuk menyapa dan berkonsultasi langsung dengan tim
         kami melalui platform favorit Anda. Kami selalu siap membantu!

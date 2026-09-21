@@ -23,7 +23,7 @@ const ServiceDescription = ({
   listTitle,
   listItems,
 }: Pick<ServiceData, 'paragraphs' | 'listTitle' | 'listItems'>) => (
-  <div className="text-base leading-6 text-slate-700">
+  <div className="text-body leading-relaxed text-gray-600">
     {paragraphs.map((p, i) => (
       <p key={i} className={i > 0 ? 'mt-3' : ''}>
         {p}
@@ -44,7 +44,7 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
 
   const textBlock = (
     <div className="flex w-full flex-col justify-center gap-6 md:w-[530px] md:shrink-0">
-      <h2 className="text-3xl font-bold leading-tight text-slate-800 lg:text-4xl">
+      <h2 className="text-h2 text-gray-800">
         {title}
       </h2>
       <ServiceDescription paragraphs={paragraphs} listTitle={listTitle} listItems={listItems} />
@@ -72,10 +72,10 @@ const ServiceCard = ({ service }: { service: ServiceData }) => {
 
 const PageHeader = () => (
   <div className="flex flex-col items-center gap-8 py-6">
-    <h1 className="max-w-2xl text-center text-3xl text-slate-800 sm:text-4xl lg:text-5xl">
+    <h1 className="max-w-2xl text-center text-h1 leading-tight text-brand-navy sm:text-h1-lg">
       Layanan Medis Terbaik, Langsung di Rumah Anda
     </h1>
-    <p className="max-w-4xl text-center text-lg text-slate-700 sm:text-xl lg:text-2xl">
+    <p className="max-w-4xl text-center text-lead leading-relaxed text-brand-navy sm:text-lead-lg">
       Kami menghadirkan standar perawatan rumah sakit ke ruang keluarga Anda. Temukan berbagai
       layanan medis yang dirancang khusus untuk mendukung proses pemulihan keluarga tercinta.
     </p>

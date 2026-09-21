@@ -119,6 +119,25 @@
 
 @theme inline {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  /*
+   * Type scale — sourced from src/routes/index.tsx's original headings/copy
+   * (the home page is the reference design). Change a value here to update
+   * every page that uses the matching text-* utility below.
+   */
+  --color-brand-navy: #1a365d; /* Hero H1 + intro paragraph color */
+  --text-h1: 2.25rem; /* page title; pair with sm:text-h1-lg */
+  --text-h1--font-weight: 700;
+  --text-h1-lg: 3rem;
+
+  --text-h2: 1.875rem; /* content section heading (no responsive step in the source) */
+  --text-h2--font-weight: 700;
+
+  --text-lead: 1rem; /* intro paragraph under an H1; pair with sm:text-lead-lg */
+  --text-lead-lg: 1.125rem;
+
+  --text-body: 1rem; /* standard paragraph copy */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
