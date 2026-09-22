@@ -73,7 +73,6 @@ const Review = () => {
 const Header = () => (
   <section className="mt-12 text-center">
     <div className="flex justify-center">
-      <SectionKicker>Testimoni</SectionKicker>
     </div>
     <h1 className="mx-auto mt-4 max-w-3xl text-h1 leading-tight text-brand-navy sm:text-h1-lg">
       Cerita Nyata dari Keluarga yang Kami Layani
