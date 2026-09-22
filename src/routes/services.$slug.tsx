@@ -1,7 +1,6 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react'
 
-import { Badge } from '#/components/ui/badge.tsx'
 import { Button } from '#/components/ui/button.tsx'
 
 import { SERVICES } from '../data/services'
@@ -29,11 +28,6 @@ const ServiceDetail = () => {
         </div>
 
         <div className="flex flex-col gap-5">
-          <Badge
-            variant="secondary"
-            className="w-fit bg-blue-50 text-xs font-semibold uppercase tracking-widest text-blue-600"
-          >
-          </Badge>
           <h1 className="text-h1 leading-tight text-brand-navy sm:text-h1-lg">
             {service.title}
           </h1>

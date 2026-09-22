@@ -8,15 +8,6 @@ import { Card, CardContent, CardFooter } from '#/components/ui/card.tsx'
 
 import { REVIEWS, REVIEW_STATS, RATING_BREAKDOWN } from '../data/reviews'
 
-const SectionKicker = ({ children }: { children: React.ReactNode }) => (
-  <Badge
-    variant="secondary"
-    className="bg-blue-50 text-sm font-semibold uppercase tracking-widest text-primary"
-  >
-    {children}
-  </Badge>
-)
-
 const CtaButton = ({
   to,
   children,
