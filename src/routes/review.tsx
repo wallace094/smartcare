@@ -8,15 +8,6 @@ import { Card, CardContent, CardFooter } from '#/components/ui/card.tsx'
 
 import { REVIEWS, REVIEW_STATS, RATING_BREAKDOWN } from '../data/reviews'
 
-const SectionKicker = ({ children }: { children: React.ReactNode }) => (
-  <Badge
-    variant="secondary"
-    className="bg-blue-50 text-sm font-semibold uppercase tracking-widest text-primary"
-  >
-    {children}
-  </Badge>
-)
-
 const CtaButton = ({
   to,
   children,
@@ -73,12 +64,11 @@ const Review = () => {
 const Header = () => (
   <section className="mt-12 text-center">
     <div className="flex justify-center">
-      <SectionKicker>Testimoni</SectionKicker>
     </div>
-    <h1 className="mx-auto mt-4 max-w-3xl text-4xl font-bold leading-tight text-slate-700 sm:text-5xl">
+    <h1 className="mx-auto mt-4 max-w-3xl text-h1 leading-tight text-brand-navy sm:text-h1-lg">
       Cerita Nyata dari Keluarga yang Kami Layani
     </h1>
-    <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-gray-600">
+    <p className="mx-auto mt-4 max-w-2xl text-lead leading-relaxed text-brand-navy sm:text-lead-lg">
       Kepercayaan ribuan keluarga adalah alasan kami terus hadir. Inilah
       pengalaman mereka bersama tim dokter dan perawat SmartCare di rumah.
     </p>
@@ -166,10 +156,10 @@ const ReviewGrid = () => (
 
 const CtaBand = () => (
   <Card className="mt-16 flex flex-col items-center gap-5 rounded-2xl border-0 bg-blue-50 p-10 text-center shadow-none">
-    <h2 className="max-w-3xl text-4xl font-bold text-slate-700">
+    <h2 className="max-w-3xl text-h2 text-gray-800">
       Sudah Merasakan Layanan SmartCare?
     </h2>
-    <p className="max-w-2xl text-xl leading-relaxed text-gray-600">
+    <p className="max-w-2xl text-body leading-relaxed text-gray-600">
       Bagikan pengalaman Anda dan bantu keluarga lain menemukan perawatan
       terbaik di rumah. Atau jadwalkan kunjungan Anda sekarang.
     </p>
